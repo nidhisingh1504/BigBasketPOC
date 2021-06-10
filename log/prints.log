@@ -1,5 +1,0 @@
-09:06:27.470 [main] INFO  BigBasket.LoginTest - driver is Initialized
-13:09:29.025 [main] INFO  Facebook.Facebook.LoginTest - url is opened http://www.facebook.com
-13:09:30.815 [main] INFO  Facebook.Facebook.HomePageTest - page is opened 
-13:09:53.203 [main] INFO  Facebook.Facebook.ForgettenPasswordTest - page is opened 
-13:10:10.473 [main] INFO  Facebook.Facebook.ForgettenPasswordTest - Driver is going to close
