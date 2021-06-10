@@ -1,0 +1,12 @@
+[INFO ] 2021-06-10 14:20:19.359 [main] FilterProductsTest - driver is initialized
+[INFO ] 2021-06-10 14:20:27.592 [main] FilterProductsTest - URL is opened https://www.bigbasket.com
+[INFO ] 2021-06-10 14:20:30.638 [main] SetLocationTest - driver is initialized
+[INFO ] 2021-06-10 14:20:39.356 [main] SetLocationTest - URL is opened https://www.bigbasket.com
+[INFO ] 2021-06-10 14:20:45.415 [main] SetLocationTest - Location is set
+[INFO ] 2021-06-10 14:20:45.611 [main] SetLocationTest - 1860 123 1000 Login Sign up
+[INFO ] 2021-06-10 14:20:45.611 [main] SetLocationTest - Headers are verified
+[INFO ] 2021-06-10 14:20:45.652 [main] SetLocationTest - Footers are verified
+[INFO ] 2021-06-10 14:20:52.858 [main] FilterProductsTest - Total products dispayed is : 48
+[INFO ] 2021-06-10 14:20:56.734 [main] FilterProductsTest - Filtered products are verified
+[INFO ] 2021-06-10 14:21:02.125 [main] FilterProductsTest - driver is closed
+[INFO ] 2021-06-10 14:21:03.601 [main] SetLocationTest - driver is closed
