@@ -8,11 +8,7 @@
     <classes>
       <class name="bigbasket.BigBasket.SetLocationTest"/>
       <class name="bigbasket.BigBasket.FilterProductsTest"/>
+      <class name="bigbasket.BigBasket.HomeTest"/>
     </classes>
-  </test> <!-- Test -->
- <!--   <test thread-count="3" name="Test2">
-    <classes>
-       <class name="bigbasket.BigBasket.HomeTest"/>
-    </classes>
-  </test>  Test -->
+  </test>  <!-- Test -->
 </suite> <!-- Suite -->

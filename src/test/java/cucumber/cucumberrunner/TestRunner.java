@@ -1,4 +1,4 @@
-package cucumberRunner;
+package cucumber.cucumberrunner;
 
 import org.junit.runner.RunWith;
 
@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features ="src/test/java/features/BigBasket.feature",
+		features ="src/test/java/cucumber/features/features/BigBasket.feature",
 		glue="stepDefinations")
 public class TestRunner {
 
