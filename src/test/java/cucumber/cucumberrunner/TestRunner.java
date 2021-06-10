@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features ="src/test/java/cucumber/features/BigBasket.feature",
-		glue="stepDefinations", plugin= {"html:target/cucumber-html-report"})
+		glue="cucumber.stepDefinitions", plugin= {"html:target/cucumber-html-report"})
 public class TestRunner {
 
 }
