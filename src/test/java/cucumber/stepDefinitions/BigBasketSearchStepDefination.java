@@ -7,6 +7,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.junit.Cucumber;
 
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.assertEquals;
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,9 +28,10 @@ public class BigBasketSearchStepDefination extends Base{
     @Given("^BigBasket page URL is given$")
     public void BigBasket_page_url_is_given() throws Throwable {
     	driver = initializeDriver();
-		logger.info("driver is initialized");
-		driver.get(prop.getProperty("url"));
-		logger.info("URL is opened "+prop.getProperty("url"));
+	logger.info("driver is initialized");
+	driver.get(prop.getProperty("url"));
+	logger.info("URL is opened "+prop.getProperty("url"));
+	driver.quit();  
     }
     
     @When("^User has given \"([^\"]*)\" on search box and click on search button$")
@@ -46,6 +48,7 @@ public class BigBasketSearchStepDefination extends Base{
 	homePageObj.getSearchBox().sendKeys(strArg1);
 	  
 	assertTrue(true);
+	driver.quit();  
     }
     
     @Then("^User get \"([^\"]*)\" in search result$")
@@ -65,11 +68,36 @@ public class BigBasketSearchStepDefination extends Base{
 	homePageObj.getSearchBoxButton().click();
 	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
 	assertTrue(true);
+	driver.quit();  
     }
     
     @And("^Test are \"([^\"]*)\"$")
     public void test_are_something(String strArg1) throws Throwable {
     	assertTrue(true, strArg1);
+	driver.quit();  
     }
 
+    @When("^URL is loaded$")
+    public void URL_is_loaded() throws Throwable {
+    	driver = initializeDriver();
+    	logger.info("driver is initialized");
+    	driver.get(prop.getProperty("url"));
+    	logger.info("URL is opened "+prop.getProperty("url"));
+	assertTrue(true);
+	driver.quit();  
+    }
+    
+    @Then("^Verify BigBasket Title$")
+    public void Verify_BigBasket_Title(String strArg1) throws Throwable {
+    	driver = initializeDriver();
+	logger.info("driver is initialized");
+		
+	driver.manage().window().maximize();
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+		
+	String title= driver.getTitle();
+	assertEquals(title, strArg1);
+	driver.quit();  
+    }
+	
 }
