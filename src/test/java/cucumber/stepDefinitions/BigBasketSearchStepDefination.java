@@ -21,8 +21,8 @@ import bigbasket.BigBasket.resources.Base;
 @RunWith(Cucumber.class)
 public class BigBasketSearchStepDefination extends Base{
 
-	private static final Logger logger = LogManager.getLogger(BigBasketSearchStepDefination.class.getName());
-	public WebDriver driver;
+    private static final Logger logger = LogManager.getLogger(BigBasketSearchStepDefination.class.getName());
+    public WebDriver driver;
 	
     @Given("^BigBasket page URL is given$")
     public void BigBasket_page_url_is_given() throws Throwable {
@@ -37,15 +37,15 @@ public class BigBasketSearchStepDefination extends Base{
     	driver = initializeDriver();
     	HomePageObject homePageObj= new HomePageObject(driver);
     	
-		logger.info("driver is initialized");
-		driver.get(prop.getProperty("url"));
-		logger.info("URL is opened "+prop.getProperty("url"));
+	logger.info("driver is initialized");
+	driver.get(prop.getProperty("url"));
+	logger.info("URL is opened "+prop.getProperty("url"));
 		  
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-	    homePageObj.getCloseChangeLocationIcon().click();
-	    homePageObj.getSearchBox().sendKeys(strArg1);
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+	homePageObj.getCloseChangeLocationIcon().click();
+	homePageObj.getSearchBox().sendKeys(strArg1);
 	  
-	    assertTrue(true);
+	assertTrue(true);
     }
     
     @Then("^User get \"([^\"]*)\" in search result$")
@@ -53,18 +53,18 @@ public class BigBasketSearchStepDefination extends Base{
     	driver = initializeDriver();
     	HomePageObject homePageObj= new HomePageObject(driver);
     	
-		logger.info("driver is initialized");
-		driver.get(prop.getProperty("url"));
-		logger.info("URL is opened "+prop.getProperty("url"));
+	logger.info("driver is initialized");
+	driver.get(prop.getProperty("url"));
+	logger.info("URL is opened "+prop.getProperty("url"));
 		  
-		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-	    homePageObj.getCloseChangeLocationIcon().click();
-	    homePageObj.getSearchBox().sendKeys(strArg1);
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+	homePageObj.getCloseChangeLocationIcon().click();
+	homePageObj.getSearchBox().sendKeys(strArg1);
 	   
-	    driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-	    homePageObj.getSearchBoxButton().click();
-	    driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
-	    assertTrue(true);
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+	homePageObj.getSearchBoxButton().click();
+	driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS) ;
+	assertTrue(true);
     }
     
     @And("^Test are \"([^\"]*)\"$")
