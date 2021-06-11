@@ -1,5 +1,10 @@
 package bigbasket.BigBasket.listeners;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -18,10 +23,28 @@ public class Listener extends Base implements ITestListener {
 	ExtentTest test;
 	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
+	
+	
 	@Override
 	public void onTestStart(ITestResult result) {
+		prop= new Properties(); 
+		String path= "./src/main/java/bigbasket/BigBasket/resources/testdescriptions.properties";
+		//String chromeDriverPath = "C://software//chromedriver//chromedriver.exe";
+		
+		
+		FileInputStream fis;
+		try {
+			fis = new FileInputStream(path);
+			prop.load(fis);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     // TODO Auto-generated method stub
-		test = extent.createTest(result.getMethod().getMethodName());
+		test = extent.createTest(result.getMethod().getMethodName()+"<br>"+prop.getProperty(result.getMethod().getMethodName()));
 		extentTest.set(test);
 	}
 
@@ -64,7 +87,8 @@ public class Listener extends Base implements ITestListener {
 	@Override
 	public void onStart(ITestContext context) {
     // TODO Auto-generated method stub
-
+		
+		
 	}
 
 	@Override
