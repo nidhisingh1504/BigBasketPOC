@@ -8,7 +8,9 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -21,7 +23,7 @@ public class FilterProductsTest extends Base{
 	private static final Logger logger = LogManager.getLogger(FilterProductsTest.class.getName());
 	public WebDriver driver;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void initialize() throws IOException
 	{
 		driver = initializeDriver();
@@ -64,7 +66,7 @@ public class FilterProductsTest extends Base{
 		
 	
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown() 
 	{
 		

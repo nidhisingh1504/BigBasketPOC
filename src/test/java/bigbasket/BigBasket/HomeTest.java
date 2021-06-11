@@ -17,7 +17,9 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -31,7 +33,7 @@ public class HomeTest extends Base{
 	private static final Logger logger = LogManager.getLogger(HomeTest.class.getName());
 	public WebDriver driver;
 	
-	@BeforeTest
+	@BeforeMethod
 	public void initialize() throws IOException
 	{
 		driver = initializeDriver();
@@ -157,7 +159,7 @@ public class HomeTest extends Base{
 	{
 		HomePageObject home=new HomePageObject(driver);
 		
-		home.enterSearchText("zyxdfg");
+		home.enterSearchText(prop.getProperty("randomSearchText"));
 		String msg=home.getErrorMessage();
 		assertEquals(msg,"We are sorry, no results found.");
 		logger.info("Search of wrong product is done");
@@ -165,7 +167,7 @@ public class HomeTest extends Base{
 	
 	
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown() 
 	{
 		driver.close();
