@@ -40,8 +40,7 @@ public class HomeTest extends Base{
 		logger.info("driver is initialized");
 		driver.get(prop.getProperty("url"));
 		logger.info("URL is opened "+prop.getProperty("url"));
-        logger.info("URL is opened "+prop.getProperty("url"));
-        logger.info("URL is opened "+prop.getProperty("url"));
+                logger.info("URL is opened "+prop.getProperty("url"));
 	};
 	
 	@Test(priority = 1)
